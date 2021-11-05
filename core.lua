@@ -80,20 +80,13 @@ function react(pos, listname)
                 local from = inv:get_stack("from", 1)
                 if from:get_count() > 0 and from:get_count() < 100 then
                     minetest.log("action", "from has elements")
-                    numx = from:get_count()
+                    -- how many elements in from?
+                    local numx = from:get_count()
                     local name = from:get_name()
                     local num = where(name, input)
                     if num ~= nil then
                         minetest.log("action", "found recipe, exploding")
-                        local to1 = inv:get_stack("result", 1)
-                        local to2 = inv:get_stack("result", 2)
-                        local to3 = inv:get_stack("result", 3)
-                        local to4 = inv:get_stack("result", 4)
-                        local to5 = inv:get_stack("result", 5)
-                        local to6 = inv:get_stack("result", 6)
-                        local to7 = inv:get_stack("result", 7)
-                        local to8 = inv:get_stack("result", 8)
-                        local to9 = inv:get_stack("result", 9)
+                        
                         local item1 = out1[num]
                         local item2 = out2[num]
                         local item3 = out3[num]
@@ -103,15 +96,15 @@ function react(pos, listname)
                         local item7 = out7[num]
                         local item8 = out8[num]
                         local item9 = out9[num]
-                        stack1 = {name = item1, count = numx}
-                        stack2 = {name = item2, count = numx}
-                        stack3 = {name = item3, count = numx}
-                        stack4 = {name = item4, count = numx}
-                        stack5 = {name = item5, count = numx}
-                        stack6 = {name = item6, count = numx}
-                        stack7 = {name = item7, count = numx}
-                        stack8 = {name = item8, count = numx}
-                        stack9 = {name = item9, count = numx}
+                        local stack1 = {name = item1, count = numx}
+                        local stack2 = {name = item2, count = numx}
+                        local stack3 = {name = item3, count = numx}
+                        local stack4 = {name = item4, count = numx}
+                        local stack5 = {name = item5, count = numx}
+                        local stack6 = {name = item6, count = numx}
+                        local stack7 = {name = item7, count = numx}
+                        local stack8 = {name = item8, count = numx}
+                        local stack9 = {name = item9, count = numx}
                         inv:set_stack("result", 1, stack1)
                         inv:set_stack("result", 2, stack2)
                         inv:set_stack("result", 3, stack3)
